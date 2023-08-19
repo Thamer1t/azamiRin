@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 // Real Owner moved to db.data.datas.rowner
-global.mods = ['6282337245566', '6285282250251'] // Developer / Mods Number
+global.mods = ['966503639743'] // Developer / Mods Number
 global.APIs = { // API Prefix
 	// name: 'https://website'
 	nrtm: 'https://nurutomo.herokuapp.com',
@@ -25,7 +25,7 @@ global.APIKeys = { // APIKey Here
 	'https://api.lolhuman.xyz': 'apikeylu'
 }
 
-global.multiplier = 69 // The higher, The harder levelup
+global.multiplier = 100 // The higher, The harder levelup
 
 global.rpg = {
 	emoticon(string) {
