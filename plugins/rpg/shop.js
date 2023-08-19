@@ -27,7 +27,7 @@ const items = {
 		emerald: {
 			money: 200000,
 		},
-		diamond: {
+		الماس: {
 			money: 300000,
 		},
 		gold: {
