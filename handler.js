@@ -106,8 +106,8 @@ export async function handler(chatUpdate) {
 
 					if (!isNumber(user.emerald))
 						user.emerald = 0
-					if (!isNumber(user.diamond))
-						user.diamond = 0
+					if (!isNumber(user.الماس))
+						user.الماس = 0
 					if (!isNumber(user.gold))
 						user.gold = 0
 					if (!isNumber(user.steel))
@@ -482,7 +482,7 @@ export async function handler(chatUpdate) {
 					sand: 0,
 
 					emerald: 0,
-					diamond: 0,
+					الماس: 0,
 					gold: 0,
 					steel: 0,
 					kargo: 0,
