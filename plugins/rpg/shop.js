@@ -2,513 +2,510 @@ import db from '../../lib/database.js'
 import { isNumber, readMore, somematch } from '../../lib/func.js'
 
 const items = {
-	buy: {
-		limit: {
-			money: 1000
+	شراء: {
+		الحد: {
+			جيني: 1000
 		},
-		potion: {
-			money: 1250,
+		جرعة: {
+			جيني: 1250,
 		},
-		wood: {
-			money: 2000,
+		خشب: {
+			جيني: 2000,
 		},
-		rock: {
-			money: 2000,
+		حجر: {
+			جيني: 2000,
 		},
-		string: {
-			money: 2500,
+		خيط: {
+			جيني: 2500,
 		},
-		iron: {
-			money: 3000,
+		حديد: {
+			جيني: 3000,
 		},
-		sand: {
-			money: 1500,
+		رمل: {
+			جيني: 1500,
 		},
-		emerald: {
-			money: 200000,
+		زمرد: {
+			جيني: 200000,
 		},
 		الماس: {
-			money: 300000,
+			جيني: 300000,
 		},
-		gold: {
-			money: 100000,
+		ذهب: {
+			جيني: 100000,
 		},
-		petfood: {
-			money: 2500,
+		طعام: {
+			جيني: 2500,
 		},
-		bawang: {
-			money: 150,
+		بصل: {
+			جيني: 150,
 		},
-		cabai: {
-			money: 250,
+		فلفل: {
+			جيني: 250,
 		},
-		kemiri: {
-			money: 100,
+		
+		زنجبيل: {
+			جيني: 100,
 		},
-		jahe: {
-			money: 100,
+		صلصة: {
+			جيني: 70,
 		},
-		saus: {
-			money: 70,
+		ليمون: {
+			جيني: 50,
 		},
-		asam: {
-			money: 50,
+		بذورتفاح: {
+			جيني: 150,
 		},
-		bibitapel: {
-			money: 150,
+		بذورعنب: {
+			جيني: 200,
 		},
-		bibitanggur: {
-			money: 200,
+		بذورمانجو: {
+			جيني: 250,
 		},
-		bibitmangga: {
-			money: 250,
+		بذورموز: {
+			جيني: 50,
 		},
-		bibitpisang: {
-			money: 50,
+		بذوربرتقال: {
+			جيني: 300,
 		},
-		bibitjeruk: {
-			money: 300,
+		شائع: {
+			جيني: 10000,
 		},
-		common: {
-			money: 10000,
+		غيرشائع: {
+			جيني: 15000,
 		},
-		uncommon: {
-			money: 15000,
+		غامض: {
+			جيني: 25000,
 		},
-		mythic: {
-			money: 25000,
+		اسطوري: {
+			جيني: 40000,
 		},
-		legendary: {
-			money: 40000,
+		ثور: {
+			جيني: 11000,
 		},
-		banteng: {
-			money: 11000,
+		نمر: {
+			جيني: 18000,
 		},
-		harimau: {
-			money: 18000,
+		فيل: {
+			جيني: 16000,
 		},
-		gajah: {
-			money: 16000,
+		ماعز: {
+			جيني: 12000,
 		},
-		kambing: {
-			money: 12000,
+		باندا: {
+			جيني: 20000,
 		},
-		panda: {
-			money: 20000,
+		تمساح: {
+			جيني: 5000,
 		},
-		buaya: {
-			money: 5000,
+		جاموس: {
+			جيني: 9000,
 		},
-		kerbau: {
-			money: 9000,
+		بقرة: {
+			جيني: 10000,
 		},
-		sapi: {
-			money: 10000,
+		قرد: {
+			جيني: 5000,
 		},
-		monyet: {
-			money: 5000,
+		ضب: {
+			جيني: 4000,
 		},
-		babihutan: {
-			money: 4000,
+		خنزير: {
+			جيني: 8000,
 		},
-		babi: {
-			money: 8000,
+		دجاجة: {
+			جيني: 3000,
 		},
-		ayam: {
-			money: 3000,
+		سلمون: {
+			جيني: 3800,
 		},
-		orca: {
-			money: 20000,
+		حوت: {
+			جيني: 45000,
 		},
-		paus: {
-			money: 45000,
+		دولفين: {
+			جيني: 5000,
 		},
-		lumba: {
-			money: 5000,
+		قرش: {
+			جيني: 4500,
 		},
-		hiu: {
-			money: 4500,
+		سمكة: {
+			جيني: 2500,
 		},
-		ikan: {
-			money: 2500,
+		سلور: {
+			جيني: 3000,
 		},
-		lele: {
-			money: 3000,
+		زبيدي: {
+			جيني: 3500,
 		},
-		bawal: {
-			money: 3500,
+		نيلي: {
+			جيني: 3000,
 		},
-		nila: {
-			money: 3000,
+		سلطعون: {
+			جيني: 7000,
 		},
-		kepiting: {
-			money: 7000,
+		سرطان: {
+			جيني: 15000,
 		},
-		lobster: {
-			money: 15000,
+		اخطبوط: {
+			جيني: 3000,
 		},
-		gurita: {
-			money: 3000,
+		حبار: {
+			جيني: 5000,
 		},
-		cumi: {
-			money: 5000,
+		جمبري: {
+			جيني: 7500,
 		},
-		udang: {
-			money: 7500,
+		حصان: {
+			جيني: 500000,
 		},
-		horse: {
-			money: 500000,
+		قطة: {
+			جيني: 500000,
 		},
-		cat: {
-			money: 500000,
+		ثعلب: {
+			جيني: 500000,
 		},
-		fox: {
-			money: 500000,
+		كلب: {
+			جيني: 500000,
 		},
-		dog: {
-			money: 500000,
+		ذئب: {
+			جيني: 1000000,
 		},
-		wolf: {
-			money: 1000000,
-		},
-		centaur: {
+		قنطور: {
 			gold: 15,
 		},
-		phoenix: {
+		عنقاء: {
 			emerald: 10,
 		},
-		dragon: {
+		تنين: {
 			diamond: 10,
 		},
-		rumahsakit: {
-			money: 2000000,
+		مستشفى: {
+			جيني: 2000000,
 		},
-		restoran: {
-			money: 2500000,
+		مطعم: {
+			جيني: 2500000,
 		},
-		pabrik: {
-			money: 1000000,
+		مصنع: {
+			جيني: 1000000,
 		},
-		tambang: {
-			money: 2000000,
+		منجم: {
+			جيني: 2000000,
 		},
-		pelabuhan: {
-			money: 2500000,
+		مرفأ: {
+			جيني: 2500000,
 		}
 	},
-	sell: {
-		potion: {
-			money: 125,
+	بيع: {
+		جرعة: {
+			جيني: 125,
 		},
-		petfood: {
-			money: 125,
+		طعام: {
+			جيني: 125,
 		},
-		trash: {
-			money: 20,
+		قمامة: {
+			جيني: 20,
 		},
-		banteng: {
-			money: 9900,
+		ثور: {
+			جيني: 9900,
 		},
-		harimau: {
-			money: 16200,
+		نمر: {
+			جيني: 16200,
 		},
-		gajah: {
-			money: 14400,
+		فيل: {
+			جيني: 14400,
 		},
-		kambing: {
-			money: 10800,
+		ماعز: {
+			جيني: 10800,
 		},
-		panda: {
-			money: 18000,
+		باندا: {
+			جيني: 18000,
 		},
-		buaya: {
-			money: 4500,
+		تمساح: {
+			جيني: 4500,
 		},
-		kerbau: {
-			money: 8100,
+		جاموس: {
+			جيني: 8100,
 		},
-		sapi: {
-			money: 9000,
+		بقرة: {
+			جيني: 9000,
 		},
-		monyet: {
-			money: 4500,
+		قرد: {
+			جيني: 4500,
 		},
-		babihutan: {
-			money: 3600,
+		ضب: {
+			جيني: 3600,
 		},
-		babi: {
-			money: 7200,
+		خنزير: {
+			جيني: 7200,
 		},
-		ayam: {
-			money: 2700,
+		دجاجة: {
+			جيني: 2700,
 		},
-		orca: {
-			money: 18000,
+		سلمون: {
+			جيني: 3150,
 		},
 		paus: {
-			money: 40500,
+			جيني: 40500,
 		},
 		lumba: {
-			money: 4500,
+			جيني: 4500,
 		},
 		hiu: {
-			money: 4050,
+			جيني: 4050,
 		},
-		ikan: {
-			money: 2250,
+		سمكة: {
+			جيني: 2250,
 		},
-		lele: {
-			money: 2700,
+		سلور: {
+			جيني: 2700,
 		},
-		bawal: {
-			money: 3150,
+		زبيدي: {
+			جيني: 3150,
 		},
-		nila: {
-			money: 2700,
+		نيلي: {
+			جيني: 2700,
 		},
-		kepiting: {
-			money: 6300,
+		سلطعون: {
+			جيني: 6300,
 		},
-		lobster: {
-			money: 13500,
+		سرطان: {
+			جيني: 13500,
 		},
-		gurita: {
-			money: 2700,
+		اخطبوط: {
+			جيني: 2700,
 		},
-		cumi: {
-			money: 4500,
+		حبار: {
+			جيني: 4500,
 		},
-		udang: {
-			money: 6750,
+		جمبري: {
+			جيني: 6750,
 		},
-		mangga: {
-			money: 400,
+		مانجو: {
+			جيني: 400,
 		},
-		anggur: {
-			money: 300,
+		عنب: {
+			جيني: 300,
 		},
-		jeruk: {
-			money: 450,
+		برتقال: {
+			جيني: 450,
 		},
-		pisang: {
-			money: 200,
+		موز: {
+			جيني: 200,
 		},
-		apel: {
-			money: 300,
+		تفاح: {
+			جيني: 300,
 		},
-		steak: {
-			money: 35000,
+		ستيك: {
+			جيني: 35000,
 		},
-		sate: {
-			money: 45000,
+		كباب: {
+			جيني: 45000,
 		},
-		rendang: {
-			money: 31000,
+		حميس: {
+			جيني: 31000,
 		},
-		kornet: {
-			money: 27000,
+		لحم: {
+			جيني: 27000,
 		},
-		nugget: {
-			money: 32000,
+		ناغت: {
+			جيني: 32000,
 		},
-		bluefin: {
-			money: 65000,
+		تونه: {
+			جيني: 65000,
 		},
 		seafood: {
-			money: 65000,
+			جيني: 65000,
 		},
-		sushi: {
-			money: 54500,
+		سوشي: {
+			جيني: 54500,
 		},
-		moluska: {
-			money: 65000,
+		محار: {
+			جيني: 65000,
 		},
-		squidprawm: {
-			money: 60500,
+		روبيان: {
+			جيني: 60500,
 		},
-		horse: {
-			money: 450000,
+		حصان: {
+			جيني: 450000,
 		},
-		cat: {
-			money: 450000,
+		قطة: {
+			جيني: 450000,
 		},
-		fox: {
-			money: 450000,
+		ثعلب: {
+			جيني: 450000,
 		},
-		dog: {
-			money: 450000,
+		كلب: {
+			جيني: 450000,
 		},
-		wolf: {
-			money: 900000,
+		ذئب: {
+			جيني: 900000,
 		},
-		centaur: {
-			money: 1350000,
+		قنطور: {
+			جيني: 1350000,
 		},
-		phoenix: {
-			money: 1800000,
+		عنقاء: {
+			جيني: 1800000,
 		},
-		dragon: {
-			money: 2700000,
+		تنين: {
+			جيني: 2700000,
 		},
-		rumahsakit: {
-			money: 1800000,
+		مستشفى: {
+			جيني: 1800000,
 		},
-		restoran: {
-			money: 2250000,
+		مطعم: {
+			جيني: 2250000,
 		},
-		pabrik: {
-			money: 900000,
+		مصنع: {
+			جيني: 900000,
 		},
-		tambang: {
-			money: 1800000,
+		منجم: {
+			جيني: 1800000,
 		},
-		pelabuhan: {
-			money: 2250000,
+		مرفأ: {
+			جيني: 2250000,
 		}
 	}
 }
 
 let handler = async (m, { command, usedPrefix, args, isPrems }) => {
 	let user = db.data.users[m.sender]
-	const listItems = Object.fromEntries(Object.entries(items[`${somematch(['buy','shop','beli'], command) ? 'buy' : 'sell'}`]).filter(([v]) => v && v in user))
-	let info = `Format : *${usedPrefix + command} [item] [jumlah]*\n`
-	info += `Contoh : *${usedPrefix}${command} limit 10*\n\n`
-	info += `*━━━[ DAILY ITEMS ]━━━*\n%🌌 limit%\n%🥤 potion%\n%🍖 petfood%\n\n`
-	info += `*━━━[ CRAFT ITEMS ]━━━*\n`
-	info += `%| 🪵 wood	 | 🪨 rock%\n`
-	info += `%| 🕸️ string   | ⛓️ iron%\n`
-	info += `%| 🪵 sand	 | 💚 emerald%\n`
-	info += `%| 💎 diamond  | 👑 gold%\n\n`
-	info += `*━━━[ COOKING INGREDIENTS ]━━━*${readMore}\n`
-	info += `%| bawang	  | cabai%\n`
-	info += `%| kemiri	  | jahe%\n`
-	info += `%| saus		| asam%\n\n`
-	info += `*━━━[ GARDENING MATERIALS ]━━━*\n`
-	info += `%| 🌾 bibitmangga%\n`
-	info += `%| 🌾 bibitapel%\n`
-	info += `%| 🌾 bibitpisang%\n`
-	info += `%| 🌾 bibitjeruk%\n`
-	info += `%| 🌾 bibitanggur%\n\n`
-	info += `*━━━[ GACHA BOX ]━━━*\n`
-	info += `%| 📦 common%\n`
-	info += `%| 🎁 uncommon%\n`
-	info += `%| 🗳️ mythic%\n`
-	info += `%| 🗃️ legendary%\n\n`
-	info += `*━━━[ LAND ANIMALS ]━━━*\n`
-	info += `%| 🐂 banteng | 🐅 harimau%\n`
-	info += `%| 🐘 gajah   | 🐐 kambing%\n`
-	info += `%| 🐼 panda   | 🐊 buaya%\n`
-	info += `%| 🐃 kerbau  | 🐄 sapi%\n`
-	info += `%| 🐒 monyet  | 🐗 babihutan%\n`
-	info += `%| 🐖 babi	| 🐔 ayam%\n\n`
-	info += `*━━━[ SEA ANIMALS ]━━━*\n`
+	const listItems = Object.fromEntries(Object.entries(items[`${somematch(['شراء','متجر','beli'], command) ? 'شراء' : 'بيع'}`]).filter(([v]) => v && v in user))
+	let info = `الاستخدام : *${usedPrefix + command} [العنصر] [العدد]*\n`
+	info += `مثال : *${usedPrefix}${command} خشب 10*\n\n`
+	info += `*━━━[ العناصر اليومية ]━━━*\n%🌌 الحد%\n%🥤 جرعة%\n%🍖 طعام%\n\n`
+	info += `*━━━[ مواد الصناعة ]━━━*\n`
+	info += `%| 🪵 خشب	 | 🪨 حجر%\n`
+	info += `%| 🕸️ خيط   | ⛓️ حديد%\n`
+	info += `%| 🪵 رمل	 | 💚 زمرد%\n`
+	info += `%| 💎 الماس  | 👑 ذهب%\n\n`
+	info += `*━━━[ عناصر الطبخ ]━━━*${readMore}\n`
+	info += `%| بصل	  | فلفل%\n`
+	info += `%| شمعة	  | زنجبيل%\n`
+	info += `%| صلصة		| ليمون%\n\n`
+	info += `*━━━[ عناصر الزراعة ]━━━*\n`
+	info += `%| 🌾 بذورمانجو%\n`
+	info += `%| 🌾 بذورتفاح%\n`
+	info += `%| 🌾 بذورموز%\n`
+	info += `%| 🌾 بذوربرتقال%\n`
+	info += `%| 🌾 بذورعنب%\n\n`
+	info += `*━━━[ صناديق الحظ ]━━━*\n`
+	info += `%| 📦 شائع%\n`
+	info += `%| 🎁 غيرشائع%\n`
+	info += `%| 🗳️ غامض%\n`
+	info += `%| 🗃️ اسطوري%\n\n`
+	info += `*━━━[ الحيوانات ]━━━*\n`
+	info += `%| 🐂 ثور | 🐅 نمر%\n`
+	info += `%| 🐘 فيل   | 🐐 ماعز%\n`
+	info += `%| 🐼 باندا   | 🐊 تمساح%\n`
+	info += `%| 🐃 جاموس  | 🐄 بقرة%\n`
+	info += `%| 🐒 قرد  | 🐗 ضب%\n`
+	info += `%| 🐖 خنزير	| 🐔 دجاجة%\n\n`
+	info += `*━━━[ البحريات ]━━━*\n`
 	info += `%| 🐋 orca	| 🐳 paus%\n`
 	info += `%| 🐬 lumba   | 🦈 hiu%\n`
-	info += `%| 🐟 ikan	| 🐟 lele%\n`
-	info += `%| 🐡 bawal   | 🐠 nila%\n`
-	info += `%| 🦀 kepiting| 🦞 lobster%\n`
-	info += `%| 🐙 gurita  | 🦑 cumi%\n`
-	info += `%| 🦐 udang%\n\n`
-	info += `*━━━[ PET SHOP ]━━━*\n`
-	info += `%| 🐎 horse   | 🐈 cat%\n`
-	info += `%| 🦊 fox	 | 🐕 dog%\n`
-	info += `%| 🐺 wolf	| 🐎 centaur%\n`
-	info += `%| 🦜 phoenix | 🐉 dragon%\n\n`
-	info += `*━━━[ BUILDINGS ]━━━*\n`
-	info += `%| 🏥 rumahsakit%\n`
-	info += `%| 🏭 restoran%\n`
-	info += `%| 🏯 pabrik%\n`
-	info += `%| ⚒️ tambang%\n`
-	info += `%| 🛳️ pelabuhan%`
+	info += `%| 🐟 سمكة	| 🐟 سلور%\n`
+	info += `%| 🐡 زبيدي   | 🐠 نيلي%\n`
+	info += `%| 🦀 سلطعون| 🦞 سرطان%\n`
+	info += `%| 🐙 اخطبوط  | 🦑 حبار%\n`
+	info += `%| 🦐 جمبري%\n\n`
+	info += `*━━━[ الحيوانات الأليفة ]━━━*\n`
+	info += `%| 🐎 حصان   | 🐈 قطة%\n`
+	info += `%| 🦊 ثعلب	 | 🐕 كلب%\n`
+	info += `%| 🐺 ذئب	| 🐎 قنطور%\n`
+	info += `%| 🦜 عنقاء | 🐉 تنين%\n\n`
+	info += `*━━━[ المباني ]━━━*\n`
+	info += `%| 🏥 مستشفى%\n`
+	info += `%| 🏭 مطعم%\n`
+	info += `%| 🏯 مصنع%\n`
+	info += `%| ⚒️ منجم%\n`
+	info += `%| 🛳️ مرفأ%`
 
-	let infos = `Format : *${usedPrefix + command} [item] [jumlah]*\n`
-	infos += `Contoh : *${usedPrefix}${command} potion 10*\n\n`
-	infos += `*━━━[ DAILY ITEMS ]━━━*\n%🥤 potion%\n%🍖 petfood%\n%🌌 trash%\n\n`
-	infos += `*━━━[ SELL ANIMALS ]━━━*\n`
-	infos += `%| 🐂 banteng | 🐅 harimau%\n`
-	infos += `%| 🐘 gajah   | 🐐 kambing%\n`
-	infos += `%| 🐼 panda   | 🐊 buaya%\n`
-	infos += `%| 🐃 kerbau  | 🐄 sapi%\n`
-	infos += `%| 🐒 monyet  | 🐗 babihutan%\n`
-	infos += `%| 🐖 babi	| 🐔 ayam%\n\n`
-	infos += `*━━━[ SEA ANIMALS ]━━━*${readMore}\n`
-	infos += `%| 🐋 orca	| 🐳 paus%\n`
-	infos += `%| 🐬 lumba   | 🦈 hiu%\n`
-	infos += `%| 🐟 ikan	| 🐟 lele%\n`
-	infos += `%| 🐡 bawal   | 🐠 nila%\n`
-	infos += `%| 🦀 kepiting| 🦞 lobster%\n`
-	infos += `%| 🐙 gurita  | 🦑 cumi%\n`
-	infos += `%| 🦐 udang%\n\n`
-	infos += `*━━━[ SELL FRUITS ]━━━*\n`
-	infos += `%| 🥭 mangga%\n`
-	infos += `%| 🍇 anggur%\n`
-	infos += `%| 🍊 jeruk%\n`
-	infos += `%| 🍌 pisang%\n`
-	infos += `%| 🍎 apel%\n\n`
-	infos += `*━━━[ PET SELL ]━━━*\n`
-	infos += `%| 🐎 horse   | 🐈 cat%\n`
-	infos += `%| 🦊 fox	 | 🐕 dog%\n`
-	infos += `%| 🐺 wolf	| 🐎 centaur%\n`
-	infos += `%| 🦜 phoenix | 🐉 dragon%\n\n`
-	infos += `*━━━[ BUILDINGS ]━━━*\n`
-	infos += `%| 🏥 rumahsakit%\n`
-	infos += `%| 🏭 restoran%\n`
-	infos += `%| 🏯 pabrik%\n`
-	infos += `%| ⚒️ tambang%\n`
-	infos += `%| 🛳️ pelabuhan%`
+	let infos = `الاستخدام : *${usedPrefix + command} [العنصر] [العدد]*\n`
+	infos += `مثال : *${usedPrefix}${command} جرعة 10*\n\n`
+	infos += `*━━━[ العناصر اليومية ]━━━*\n%🥤 جرعة%\n%🍖 طعام%\n%🌌 قمامة%\n\n`
+	infos += `*━━━[ بيع الحيوانات ]━━━*\n`
+	infos += `%| 🐂 ثور | 🐅 نمر%\n`
+	infos += `%| 🐘 فيل   | 🐐 ماعز%\n`
+	infos += `%| 🐼 باندا   | 🐊 تمساح%\n`
+	infos += `%| 🐃 جاموس  | 🐄 بقرة%\n`
+	infos += `%| 🐒 قرد  | 🐗 ضب%\n`
+	infos += `%| 🐖 خنزير	| 🐔 دجاجة%\n\n`
+	infos += `*━━━[ الحيوانات البحرية]━━━*${readMore}\n`
+	infos += `%| 🐟 سلمون	| 🐳 حوت%\n`
+	infos += `%| 🐬 دلفين   | 🦈 قرش%\n`
+	infos += `%| 🐟 سمكة	| 🐟 سلور%\n`
+	infos += `%| 🐡 زبيدي   | 🐠 نيلي%\n`
+	infos += `%| 🦀 سلطعون| 🦞 سرطان%\n`
+	infos += `%| 🐙 اخطبوط  | 🦑 حبار%\n`
+	infos += `%| 🦐 جمبري%\n\n`
+	infos += `*━━━[ الفواكه ]━━━*\n`
+	infos += `%| 🥭 مانجو%\n`
+	infos += `%| 🍇 عنب%\n`
+	infos += `%| 🍊 برتقال%\n`
+	infos += `%| 🍌 موز%\n`
+	infos += `%| 🍎 تفاح%\n\n`
+	infos += `*━━━[ الحيوانات الأليفة ]━━━*\n`
+	infos += `%| 🐎 حصان   | 🐈 قطة%\n`
+	infos += `%| 🦊 ثعلب	 | 🐕 كلب%\n`
+	infos += `%| 🐺 ذئب	| 🐎 قنطور%\n`
+	infos += `%| 🦜 عنقاء | 🐉 تنين%\n\n`
+	infos += `*━━━[ المباني ]━━━*\n`
+	infos += `%| 🏥 مستشفى%\n`
+	infos += `%| 🏭 مطعم%\n`
+	infos += `%| 🏯 مصنع%\n`
+	infos += `%| ⚒️ منجم%\n`
+	infos += `%| 🛳️ مرفأ%`
 	
 	const item = (args[0] || '').toLowerCase()
 	const total = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-	if (!listItems[item] && somematch(['buy','shop','beli'], command)) return m.reply(info.replaceAll('%', '```'))
-	if (!listItems[item] && somematch(['sell','jual'], command)) return m.reply(infos.replaceAll('%', '```'))
+	if (!listItems[item] && somematch(['شراء','متجر','beli'], command)) return m.reply(info.replaceAll('%', '```'))
+	if (!listItems[item] && somematch(['بيع','jual'], command)) return m.reply(infos.replaceAll('%', '```'))
 	let paymentMethod = Object.keys(listItems[item]).find(v => v in user)
-	if (somematch(['buy','shop','beli'], command)) {
-		if (isPrems && item == 'limit') throw `[!] Premium User tidak perlu limit.`
-		if (somematch(['horse', 'cat', 'fox', 'dog', 'wolf', 'centaur', 'phoenix', 'dragon', 'rumahsakit', 'restoran', 'pabrik', 'tambang', 'pelabuhan'], args[0].toLowerCase())) {
+	if (somematch(['شراء','متجر','beli'], command)) {
+		if (isPrems && item == 'الحد') throw `[!] مستخدمي البريميوم لايحتاجون حدود..`
+		if (somematch(['حصان', 'قطة', 'ثعلب', 'كلب', 'ذئب', 'قنطور', 'عنقاء', 'تنين', 'مستشفى', 'مطعم', 'مصنع', 'منجم', 'مرفأ'], args[0].toLowerCase())) {
 			if (user[`${item}`] == 0) {
-				if (total > 1) return m.reply(`Kamu belum memiliki *${global.rpg.emoticon(item)}${item}*, hanya dapat beli 1`)
-				if (user[paymentMethod] < listItems[item][paymentMethod] * total) return m.reply(`Kamu tidak memiliki cukup ${paymentMethod} untuk membeli *${total} ${global.rpg.emoticon(item)}${item}*.\nDibutuhkan *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}* untuk dapat membeli.`)
-				user[paymentMethod] -= listItems[item][paymentMethod] * total
-				user[item] += total
-				user[`${item}lvl`] += 1
-				return m.reply(`Membeli *${total} ${global.rpg.emoticon(item)}${item}* seharga *${listItems[item][paymentMethod] * total} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)
+				if (total > 1) return m.reply(`ليس لديك الكمية الكافية من *${global.rpg.emoticon(item)}${item}*, يمكنك شراء 1 فقط`)
+if (user\[paymentMethod\] \< listItems\[item\]\[paymentMethod\] * total) return m.reply(`ليس لديك ما يكفي من ${paymentMethod} لشراء *${total} ${global.rpg.emoticon(item)}${item}*.\nتحتاج *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}* لشراءها.`)
+user\[paymentMethod\] -= listItems\[item\]\[paymentMethod\] * total
+user\[item\] += total
+user\[`${item}lvl`\] += 1
+return m.reply(`تم شراء *${total} ${global.rpg.emoticon(item)}${item}* بقيمة *${listItems[item][paymentMethod] * total} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)
+			
 			} else {
-				if (user[`${item}`] + total > 2 * user[`${item}lvl`]) return m.reply(`Perlu upgrade ${global.rpg.emoticon(item)} ${item} ke level ${2 * user[`${item}lvl`]} terlebih dahulu.`)
-				let harga = listItems[item][paymentMethod] * total * user[`${item}`] * user[`${item}lvl`]
-				if (user[paymentMethod] < listItems[item][paymentMethod] * total) return m.reply(`Kamu tidak memiliki cukup ${paymentMethod} untuk membeli *${total} ${global.rpg.emoticon(item)}${item} level ${user[`${item}lvl`]}*.\nDibutuhkan *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}* untuk dapat membeli.`)
-				user[paymentMethod] -= harga
-				user[item] += total
-				return m.reply(`Membeli *${total} ${global.rpg.emoticon(item)}${item}* seharga *${harga} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)
-			}
+				if (user\[`${item}`\] + total > 2 * user\[`${item}lvl`\]) return m.reply(`يجب ترقية ${global.rpg.emoticon(item)} ${item} إلى المستوى ${2 * user[`${item}lvl`]} أولاً.`)
+let harga = listItems\[item\]\[paymentMethod\] * total * user\[`${item}`\] * user\[`${item}lvl`\]
+if (user\[paymentMethod\] \< listItems\[item\]\[paymentMethod\] * total) return m.reply(`ليس لديك ما يكفي من ${paymentMethod} لشراء *${total} ${global.rpg.emoticon(item)}${item} المستوى ${user[`${item}lvl`]}*.\nتحتاج *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}* لشراءها.`)
+user\[paymentMethod\] -= harga
+user\[item\] += total
+return m.reply(`تم شراء *${total} ${global.rpg.emoticon(item)}${item}* بقيمة *${harga} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)}
 		} else {
-			if (user[paymentMethod] < listItems[item][paymentMethod] * total) return m.reply(`Kamu tidak memiliki cukup ${paymentMethod} untuk membeli *${total}* ${global.rpg.emoticon(item)}${item}.\nDibutuhkan ${global.rpg.emoticon(paymentMethod)} *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${paymentMethod}* untuk dapat membeli.`)
-			user[paymentMethod] -= listItems[item][paymentMethod] * total
-			user[item] += total
-			return m.reply(`Membeli *${total} ${global.rpg.emoticon(item)}${item}* seharga *${listItems[item][paymentMethod] * total} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)
-		}
+			if (user\[paymentMethod\] \< listItems\[item\]\[paymentMethod\] * total) return m.reply(`ليس لديك ما يكفي من ${paymentMethod} لشراء *${total}* ${global.rpg.emoticon(item)}${item}.\nتحتاج ${global.rpg.emoticon(paymentMethod)} *${(listItems[item][paymentMethod] * total) - user[paymentMethod]} ${paymentMethod}* لشراءها.`)
+user\[paymentMethod\] -= listItems\[item\]\[paymentMethod\] * total
+user\[item\] += total
+return m.reply(`تم شراء *${total} ${global.rpg.emoticon(item)}${item}* بقيمة *${listItems[item][paymentMethod] * total} ${global.rpg.emoticon(paymentMethod)} ${paymentMethod}*`)}
 	} else {
-		if (somematch(['horse', 'cat', 'fox', 'dog', 'wolf', 'centaur', 'phoenix', 'dragon', 'rumahsakit', 'restoran', 'pabrik', 'tambang', 'pelabuhan'], args[0].toLowerCase())) {
+		if (somematch(['حصان', 'قطة', 'ثعلب', 'كلب', 'ذئب', 'قنطور', 'عنقاء', 'تنين', 'مستشفى', 'مطعم', 'مصنع', 'منجم', 'مرفأ'], args[0].toLowerCase())) {
 			let harga = listItems[item][paymentMethod] * total * user[`${item}lvl`]
-			if (user[item] == 0) return m.reply(`Kamu tidak memiliki *${global.rpg.emoticon(item)}${item}* untuk dijual.`)
-			if (user[item] < total) return m.reply(`Kamu hanya memiliki *${user[item]}${global.rpg.emoticon(item)}${item}* untuk dijual.`)
+			if (user\[item\] == 0) return m.reply(`ماعندك *${global.rpg.emoticon(item)}${item}* عشان تبيعه.`))
+			if (user\[item\] \< total) return m.reply(`لديك فقط *${user[item]} ${global.rpg.emoticon(item)}${item}* للبيع.`)
 			user[item] -= total
-			user.money += harga
+			user.جيني += harga
 			let meh = user[`${item}lvl`]
 			if (user[item] == 0) user[`${item}lvl`] = 0
-			return m.reply(`Menjual *${total} ${global.rpg.emoticon(item)}${item} Level ${meh}* dengan harga *${global.rpg.emoticon(paymentMethod)} ${harga} ${paymentMethod}*`)
+			return m.reply(`بيع *${total} ${global.rpg.emoticon(item)}${item} المستوى ${meh}* بسعر *${global.rpg.emoticon(paymentMethod)} ${harga} ${paymentMethod}*`)
 		} else {
-			if (user[item] == 0) return m.reply(`Kamu tidak memiliki *${global.rpg.emoticon(item)}${item}* untuk dijual.`)
-			if (user[item] < total) return m.reply(`Kamu hanya memiliki *${user[item]}${global.rpg.emoticon(item)}${item}* untuk dijual.`)
+			if (user\[item\] == 0) return m.reply(`ماعندك*${global.rpg.emoticon(item)}${item}* عشان تبيعه.`)
+			if (user\[item\] \< total) return m.reply(`لديك فقط *${user[item]} ${global.rpg.emoticon(item)}${item}* للبيع.`)
 			user[item] -= total
-			user.money += listItems[item].money * total
-			return m.reply(`Menjual *${total} ${global.rpg.emoticon(item)}${item}* dengan harga *${global.rpg.emoticon(paymentMethod)} ${listItems[item].money * total} ${paymentMethod}*`)
-		}
+			user.جيني += listItems[item].جيني * total
+			return m.reply(`بيع *${total} ${global.rpg.emoticon(item)}${item}* بسعر *${global.rpg.emoticon(paymentMethod)} ${listItems[item].جيني * total} ${paymentMethod}*`)
+}
 	}
 }
 
-handler.menufun = ['buy', 'sell'].map(v => v + ' [item] [count]')
+handler.menufun = ['شراء', 'بيع'].map(v => v + ' [العنصر] [العدد]')
 handler.tagsfun = ['rpg']
-handler.command = /^(buy|beli|shop|sell|jual)$/i
+handler.command = /^(شراء|beli|متجر|بيع|jual)$/i
 
 handler.disabled = false
 
