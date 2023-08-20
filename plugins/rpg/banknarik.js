@@ -14,6 +14,6 @@ let handler = async (m, { conn, command, usedPrefix, args }) => {
 }
 handler.menufun = ['ادخار <المبلغ>']
 handler.tagsfun = ['rpg']
-handler.command = /^(دخار(الكل)?)$/i
+handler.command = /^(ادخار(الكل)?)$/i
 
 export default handler
