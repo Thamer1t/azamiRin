@@ -44,10 +44,10 @@ export async function handler(chatUpdate) {
 				if (typeof user !== 'object')
 				db.data.users[m.sender] = {}
 				if (user) {
-					if (!isNumber(user.exp))
-						user.exp = 0
-					if (!isNumber(user.limit))
-						user.limit = 120
+					if (!isNumber(user.خبرة))
+						user.خبرة = 0
+					if (!isNumber(user.الحد))
+						user.الحد = 120
 					if (!isNumber(user.lastclaim))
 						user.lastclaim = 0
 					if (!('registered' in user))
