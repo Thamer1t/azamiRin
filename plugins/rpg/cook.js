@@ -6,184 +6,171 @@ const cooldownn = 300000 // 10 masakan
 
 let handler = async (m, { command, usedPrefix, args }) => {
 	let user = db.data.users[m.sender]
-	let info = `Format : *${usedPrefix + command} [item] [jumlah]*\n`
-	info += `Contoh : *${usedPrefix}${command} rendang 2*\n\n`
-	info += `*━━━[ COOKING LIST ]━━━*\n`
-	info += `%| 🍝 steak   | 🍢 sate%\n`
-	info += `%| 🍜 rendang | 🥣 kornet%\n`
-	info += `%| 🍱 nugget  | 🍲 bluefin%\n`
-	info += `%| 🍛 seafood | 🥘 moluska%\n`
-	info += `%| 🍣 sushi   | 🍤 squidprawm%`
+	let info = `الاستدخام : *${usedPrefix + command} [العنصر] [العدد]*\n`
+	info += `مثال : *${usedPrefix}${command} ستيك 2*\n\n`
+	info += `*━━━[ وصفات الطبخ ]━━━*\n`
+	info += `%| 🍝 ستيك   | 🍢 كباب%\n`
+	info += `%| 🍜 حميس | 🥣 لحم%\n`
+	info += `%| 🍱 ناغت  | 🍲 تونه%\n`
+	info += `%| روبيان 🍤  |  🥘 محار%\n`
+	info += `%| 🍣 سوشي    %`
 	
 	const item = (args[0] || '').toLowerCase()
 	const total = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-	if (new Date - user.lastmasak <= cooldown) return m.reply(`_Tunggu beberapa saat lagi . . ._\n🕖 *${((user.lastmasak) - new Date()).toTimeString()}*`)
-	if (item == 'steak') {
-		if (user.panda < 1 * total || user.ayam < 1 * total || user.kerbau < 1 * total || user.bawang < 33 * total || user.saus < 43 * total) {
-			m.reply(`Diperlukan ${1 * total} panda, ${1 * total} ayam, ${1 * total} kerbau, ${33 * total} bawang, ${43 * total} saus.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('panda')} ${user.panda} panda\n━ ${global.rpg.emoticon('ayam')} ${user.ayam} ayam\n━ ${global.rpg.emoticon('kerbau')} ${user.kerbau} kerbau\n━ ${user.bawang} bawang\n━ ${user.saus} saus`)
+	if (new Date() - user.lastmasak \<= cooldown) return m.reply(`انتظر ... 🕖 *${((user.lastmasak) - new Date()).toTimeString()}*`)
+	if (item == 'ستيك') {
+		if (user.باندا < 1 * total || user.دجاجة < 1 * total || user.جاموس < 1 * total || user.بصل < 33 * total || user.صلصة < 43 * total) {
+			m.reply(`مطلوب ${1 * total} من الباندا، ${1 * total} من الدجاج، ${1 * total} من الثيران، ${33 * total} من البصل، ${43 * total} من الصلصة.\n\nلديك :\n━ ${global.rpg.emoticon('باندا')} ${user.باندا} باندا\n━ ${global.rpg.emoticon('دجاجة')} ${user.دجاجة} دجاج\n━ ${global.rpg.emoticon('جاموس')} ${user.جاموس} ثور\n━ ${user.بصل} بصل\n━ ${user.صلصة} صلصة`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.panda -= 1 * total
-				user.ayam -= 1 * total
-				user.kerbau -= 1 * total
-				user.bawang -= 33 * total
-				user.saus -= 43 * total
-				user.steak += total
+				user.باندا -= 1 * total
+				user.دجاجة -= 1 * total
+				user.جاموس -= 1 * total
+				user.بصل -= 33 * total
+				user.صلصة -= 43 * total
+				user.ستيك += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('steak')} steak*.\n\nTotal steak : ${user.steak}`)
+				m.reply(`تم طبخ*${total} ${global.rpg.emoticon('ستيك')} ستيك*.\n\nمجموع الستيك : ${user.ستيك}`)
 			}, cooldownn)
 		}
-	} else if (item == 'sate') {
-		if (user.harimau < 1 * total || user.babihutan < 1 * total || user.sapi < 1 * total || user.bawang < 33 * total || user.saus < 43 * total) {
-			m.reply(`Diperlukan ${1 * total} harimau, ${1 * total} babihutan, ${1 * total} sapi, ${33 * total} bawang, ${43 * total} saus.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('harimau')} ${user.harimau} harimau\n━ ${global.rpg.emoticon('babihutan')} ${user.babihutan} babihutan\n━ ${global.rpg.emoticon('sapi')} ${user.sapi} sapi\n━ ${user.bawang} bawang\n━ ${user.saus} saus`)
+	} else if (item == 'كباب') {
+		if (user.نمر < 1 * total || user.ضب < 1 * total || user.بقرة < 1 * total || user.بصل < 33 * total || user.صلصة < 43 * total) {
+			m.reply(`مطلوب ${1 * total} نمر, ${1 * total} ضب, ${1 * total} بقرة, ${33 * total} بصل, ${43 * total} صلصة.\n\nلديك :\n━ ${global.rpg.emoticon('نمر')} ${user.نمر} نمر\n━ ${global.rpg.emoticon('ضب')} ${user.ضب} ضب\n━ ${global.rpg.emoticon('بقرة')} ${user.بقرة} بقرة\n━ ${user.بصل} بصل\n━ ${user.صلصة} صلصة`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.harimau -= 1 * total
-				user.babihutan -= 1 * total
-				user.sapi -= 1 * total
-				user.bawang -= 33 * total
-				user.saus -= 43 * total
-				user.sate += total
+				user.نمر -= 1 * total
+				user.ضب -= 1 * total
+				user.بقرة -= 1 * total
+				user.بصل -= 33 * total
+				user.صلصة -= 43 * total
+				user.كباب += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('sate')} sate*.\n\nTotal sate : ${user.sate}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('كباب')} كباب*.\n\nمجموع الكباب : ${user.كباب}`)
 			}, cooldownn)
 		}
-	} else if (item == 'rendang') {
-		if (user.gajah < 1 * total || user.buaya < 1 * total || user.bawang < 27 * total || user.cabai < 16 * total || user.jahe < 30 * total) {
-			m.reply(`Diperlukan ${1 * total} gajah, ${1 * total} buaya, ${27 * total} bawang, ${16 * total} cabai, ${30 * total} jahe.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('gajah')} ${user.gajah} gajah\n━ ${global.rpg.emoticon('buaya')} ${user.buaya} buaya\n━ ${user.bawang} bawang\n━ ${user.cabai} cabai, \n━ ${user.jahe} jahe`)
+	} else if (item == 'حميس') {
+		if (user.فيل < 1 * total || user.تمساح < 1 * total || user.بصل < 27 * total || user.فلفل < 16 * total || user.زنجبيل < 30 * total) {
+			m.reply(`مطلوب ${1 * total} فيل, ${1 * total} تمساح, ${27 * total} بصل, ${16 * total} فلفل, ${30 * total} زنجبيل.\n\nلديك :\n━ ${global.rpg.emoticon('فيل')} ${user.فيل} فيل\n━ ${global.rpg.emoticon('تمساح')} ${user.تمساح} تمساح\n━ ${user.بصل} بصل\n━ ${user.فلفل} فلفل, \n━ ${user.زنجبيل} زنجبيل`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.gajah -= 1 * total
-				user.buaya -= 1 * total
-				user.bawang -= 27 * total
-				user.cabai -= 16 * total
-				user.jahe -= 30 * total
-				user.rendang += total
+				user.فيل -= 1 * total
+				user.تمساح -= 1 * total
+				user.بصل -= 27 * total
+				user.فلفل -= 16 * total
+				user.زنجبيل -= 30 * total
+				user.حميس += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('rendang')} rendang*.\n\nTotal rendang : ${user.rendang}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('حميس')} حميس*.\n\nمجموع الحميس : ${user.حميس}`)
 			}, cooldownn)
 		}
-	} else if (item == 'kornet') {
-		if (user.kambing < 1 * total || user.monyet < 1 * total || user.saus < 72 * total || user.asam < 80 * total || user.kemiri < 40 * total) {
-			m.reply(`Diperlukan ${1 * total} kambing, ${1 * total} monyet, ${72 * total} saus, ${80 * total} asam, ${40 * total} kemiri.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('kambing')} ${user.kambing} kambing\n━ ${global.rpg.emoticon('monyet')} ${user.monyet} monyet\n━ ${user.saus} saus\n━ ${user.asam} asam, \n━ ${user.kemiri} kemiri`)
+	} else if (item == 'لحم') {
+		if (user.ماعز < 1 * total || user.قرد < 1 * total || user.صلصة < 72 * total || user.ليمون < 80 * total || user.شمعة < 40 * total) {
+			m.reply(`مطلوب ${1 * total} ماعز, ${1 * total} قرد, ${72 * total} صلصة, ${80 * total} ليمون, ${40 * total} شمعة.\n\nلديك :\n━ ${global.rpg.emoticon('ماعز')} ${user.ماعز} ماعز\n━ ${global.rpg.emoticon('قرد')} ${user.قرد} قرد\n━ ${user.صلصة} صلصة\n━ ${user.ليمون} ليمون, \n━ ${user.شمعة} شمعة`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.kambing -= 1 * total
-				user.monyet -= 1 * total
-				user.saus -= 72 * total
-				user.asam -= 80 * total
-				user.kemiri -= 40 * total
-				user.kornet += total
+				user.ماعز -= 1 * total
+				user.قرد -= 1 * total
+				user.صلصة -= 72 * total
+				user.ليمون -= 80 * total
+				user.شمعة -= 40 * total
+				user.لحم += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('kornet')} kornet*.\n\nTotal kornet : ${user.kornet}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('لحم')} لحم*.\n\nمجموع اللحم : ${user.لحم}`)
 			}, cooldownn)
 		}
-	} else if (item == 'nugget') {
-		if (user.banteng < 1 * total || user.babi < 1 * total || user.saus < 72 * total || user.bawang < 34* total || user.kemiri < 50 * total) {
-			m.reply(`Diperlukan ${1 * total} banteng, ${1 * total} babi, ${72 * total} saus, ${34* total} bawang, ${50 * total} kemiri.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('banteng')} ${user.banteng} banteng\n━ ${global.rpg.emoticon('babi')} ${user.babi} babi\n━ ${user.saus} saus\n━ ${user.bawang} bawang, \n━ ${user.kemiri} kemiri`)
+	} else if (item == 'ناغت') {
+		if (user.ثور < 1 * total || user.خنزير < 1 * total || user.صلصة < 72 * total || user.بصل < 34* total || user.شمعة < 50 * total) {
+			m.reply(`مطلوب ${1 * total} ثور, ${1 * total} خنزير, ${72 * total} صلصة, ${34* total} بصل, ${50 * total} شمعة.\n\nلديك :\n━ ${global.rpg.emoticon('ثور')} ${user.ثور} ثور\n━ ${global.rpg.emoticon('خنزير')} ${user.خنزير} خنزير\n━ ${user.صلصة} صلصة\n━ ${user.بصل} بصل, \n━ ${user.شمعة} شمعة`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.banteng -= 1 * total
-				user.babi -= 1 * total
-				user.saus -= 72 * total
-				user.bawang -= 34* total
-				user.kemiri -= 50 * total
-				user.nugget += total
+				user.ثور -= 1 * total
+				user.خنزير -= 1 * total
+				user.صلصة -= 72 * total
+				user.بصل -= 34* total
+				user.شمعة -= 50 * total
+				user.ناغت += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('nugget')} nugget*.\n\nTotal nugget : ${user.nugget}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('ناغت')} ناغت*.\n\nمجموع الناغت : ${user.ناغت}`)
 			}, cooldownn)
 		}
-	} else if (item == 'sushi') {
-		if (user.lobster < 2 * total || user.hiu < 3 * total || user.bawal < 3 * total || user.asam < 60 * total || user.kemiri < 30 * total) {
-			m.reply(`Diperlukan ${2 * total} lobster, ${3 * total} hiu, ${3 * total} bawal, ${60 * total} asam, ${30 * total} kemiri.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('lobster')} ${user.lobster} lobster\n━ ${global.rpg.emoticon('hiu')} ${user.hiu} hiu\n━ ${global.rpg.emoticon('bawal')} ${user.bawal} bawal\n━ ${user.asam} asam, \n━ ${user.kemiri} kemiri`)
+	} else if (item == 'سوشي') {
+		if (user.سرطان < 2 * total || user.قرش < 3 * total || user.زبيدي < 3 * total || user.ليمون < 60 * total || user.شمعة < 30 * total) {
+			m.reply(`مطلوب ${2 * total} سرطان, ${3 * total} قرش, ${3 * total} زبيدي, ${60 * total} ليمون, ${30 * total} شمعة.\n\nلديك :\n━ ${global.rpg.emoticon('سرطان')} ${user.سرطان} سرطان\n━ ${global.rpg.emoticon('قرش')} ${user.قرش} قرش\n━ ${global.rpg.emoticon('زبيدي')} ${user.زبيدي} زبيدي\n━ ${user.ليمون} ليمون, \n━ ${user.شمعة} شمعة`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.lobster -= 2 * total
-				user.hiu -= 3 * total
-				user.bawal -= 3 * total
-				user.asam -= 60 * total
-				user.kemiri -= 30 * total
-				user.sushi += total
+				user.سرطان -= 2 * total
+				user.قرش -= 3 * total
+				user.زبيدي -= 3 * total
+				user.ليمون -= 60 * total
+				user.شمعة -= 30 * total
+				user.سوشي += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('sushi')} sushi*.\n\nTotal sushi : ${user.sushi}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('سوشي')} سوشي*.\n\nمجموع السوشي : ${user.سوشي}`)
 			}, cooldownn)
 		}
-	} else if (item == 'moluska') {
-		if (user.udang < 3 * total || user.cumi < 3 * total || user.lele < 5 * total || user.saus < 54 * total || user.asam < 75 * total) {
-			m.reply(`Diperlukan ${3 * total} udang, ${3 * total} cumi, ${5 * total} lele, ${54 * total} saus, ${75 * total} asam.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('udang')} ${user.udang} udang\n━ ${global.rpg.emoticon('cumi')} ${user.cumi} cumi\n━ ${global.rpg.emoticon('lele')} ${user.lele} lele\n━ ${user.saus} saus, \n━ ${user.asam} asam`)
+	} else if (item == 'محار') {
+		if (user.جمبري < 3 * total || user.حبار < 3 * total || user.سلور < 5 * total || user.صلصة < 54 * total || user.ليمون < 75 * total) {
+			m.reply(`مطلوب ${3 * total} جمبري, ${3 * total} حبار, ${5 * total} سلور, ${54 * total} صلصة, ${75 * total} ليمون.\n\nلديك :\n━ ${global.rpg.emoticon('جمبري')} ${user.جمبري} جمبري\n━ ${global.rpg.emoticon('حبار')} ${user.حبار} حبار\n━ ${global.rpg.emoticon('سلور')} ${user.سلور} سلور\n━ ${user.صلصة} صلصة, \n━ ${user.ليمون} ليمون`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.udang -= 3 * total
-				user.cumi -= 3 * total
-				user.lele -= 5 * total
-				user.saus -= 54 * total
-				user.asam -= 75 * total
-				user.moluska += total
+				user.جمبري -= 3 * total
+				user.حبار -= 3 * total
+				user.سلور -= 5 * total
+				user.صلصة -= 54 * total
+				user.ليمون -= 75 * total
+				user.محار += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('moluska')} moluska*.\n\nTotal moluska : ${user.moluska}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('محار')} محار*.\n\nمجموع المحار : ${user.محار}`)
 			}, cooldownn)
 		}
-	} else if (item == 'squidprawm') {
-		if (user.kepiting < 2 * total || user.lumba < 3 * total || user.gurita < 7 * total || user.bawang < 26 * total || user.asam < 71 * total) {
-			m.reply(`Diperlukan ${2 * total} kepiting, ${3 * total} lumba, ${7 * total} gurita, ${26 * total} bawang, ${71 * total} asam.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('kepiting')} ${user.kepiting} kepiting\n━ ${global.rpg.emoticon('lumba')} ${user.lumba} lumba\n━ ${global.rpg.emoticon('gurita')} ${user.gurita} gurita\n━ ${user.bawang} bawang, \n━ ${user.asam} asam`)
+	} else if (item == 'روبيان') {
+		if (user.سلطعون < 2 * total || user.دولفين < 3 * total || user.اخطبوط < 7 * total || user.بصل < 26 * total || user.ليمون < 71 * total) {
+			m.reply(`مطلوب ${2 * total} سلطعون, ${3 * total} دولفين, ${7 * total} اخطبوط, ${26 * total} بصل, ${71 * total} ليمون.\n\nلديك :\n━ ${global.rpg.emoticon('سلطعون')} ${user.سلطعون} سلطعون\n━ ${global.rpg.emoticon('دولفين')} ${user.دولفين} دولفين\n━ ${global.rpg.emoticon('اخطبوط')} ${user.اخطبوط} اخطبوط\n━ ${user.بصل} بصل, \n━ ${user.ليمون} ليمون`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.kepiting -= 2 * total
-				user.lumba -= 3 * total
-				user.gurita -= 7 * total
-				user.bawang -= 26 * total
-				user.asam -= 71 * total
-				user.squidprawm += total
+				user.سلطعون -= 2 * total
+				user.دولفين -= 3 * total
+				user.اخطبوط -= 7 * total
+				user.بصل -= 26 * total
+				user.ليمون -= 71 * total
+				user.روبيان += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('squidprawm')} squidprawm*.\n\nTotal squidprawm : ${user.squidprawm}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('روبيان')} روبيان*.\n\nمجموع الروبيان : ${user.روبيان}`)
 			}, cooldownn)
 		}
-	} else if (item == 'bluefin') {
-		if (user.paus < 1 * total || user.ikan < 2 * total || user.kemiri < 50 * total || user.cabai < 20 * total) {
-			m.reply(`Diperlukan ${1 * total} paus, ${2 * total} ikan, ${50 * total} kemiri, ${20 * total} cabai.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('paus')} ${user.paus} paus\n━ ${global.rpg.emoticon('ikan')} ${user.ikan} ikan\n━ ${user.kemiri} kemiri, \n━ ${user.cabai} cabai`)
+	} else if (item == 'تونه') {
+		if (user.حوت < 1 * total || user.سمكة < 2 * total || user.شمعة < 50 * total || user.فلفل < 20 * total) {
+			m.reply(`مطلوب ${1 * total} حوت, ${2 * total} سمكة, ${50 * total} شمعة, ${20 * total} فلفل.\n\nلديك :\n━ ${global.rpg.emoticon('حوت')} ${user.حوت} حوت\n━ ${global.rpg.emoticon('سمكة')} ${user.سمكة} سمكة\n━ ${user.شمعة} شمعة, \n━ ${user.فلفل} فلفل`)
 		} else {
 			user.lastmasak = new Date * 1 + (cooldown * total)
 			setTimeout(() => {
-				user.paus -= 1 * total
-				user.ikan -= 2 * total
-				user.kemiri -= 50 * total
-				user.cabai -= 20 * total
-				user.bluefin += total
+				user.حوت -= 1 * total
+				user.سمكة -= 2 * total
+				user.شمعة -= 50 * total
+				user.فلفل -= 20 * total
+				user.تونه += total
 				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('bluefin')} bluefin*.\n\nTotal bluefin : ${user.bluefin}`)
+				m.reply(`تم طبخ *${total} ${global.rpg.emoticon('تونه')} تونه*.\n\nمجموع التونه : ${user.تونه}`)
 			}, cooldownn)
 		}
-	} else if (item == 'seafood') {
-		if (user.orca < 1 * total || user.nila < 10 * total || user.kemiri < 50 * total || user.cabai < 20 * total) {
-			m.reply(`Diperlukan ${1 * total} orca, ${10 * total} nila, ${50 * total} kemiri, ${20 * total} cabai.\n\nAnda memiliki :\n━ ${global.rpg.emoticon('orca')} ${user.orca} orca\n━ ${global.rpg.emoticon('nila')} ${user.nila} nila\n━ ${user.kemiri} kemiri, \n━ ${user.cabai} cabai`)
-		} else {
-			user.lastmasak = new Date * 1 + (cooldown * total)
-			setTimeout(() => {
-				user.orca -= 1 * total
-				user.nila -= 10 * total
-				user.kemiri -= 50 * total
-				user.cabai -= 20 * total
-				user.seafood += total
-				user.masakcount += 1
-				m.reply(`Anda memasak *${total} ${global.rpg.emoticon('seafood')} seafood*.\n\nTotal seafood : ${user.seafood}`)
-			}, cooldownn)
-		}
-	} else {
+	} 
+	
+	else {
 		m.reply(info.replaceAll('%', '```'))
 	}
 }
 
-handler.menufun = ['cook'].map(v => v + ' [item] [count]')
+handler.menufun = ['طبخ'].map(v => v + ' [العنصر] [العدد]')
 handler.tagsfun = ['rpg']
-handler.command = /^((cook(ing)?)|((me)?masak))$/i
+handler.command = /^((طبخ(ing)?)|((me)?masak))$/i
 
 handler.cooldown = cooldown
 handler.premium = true
