@@ -1,4 +1,4 @@
-import db from '../../lib/database.js'
+/*import db from '../../lib/database.js'
 import { ranNumb } from '../../lib/func.js'
 import fs from 'fs'
 
@@ -35,4 +35,4 @@ handler.menufun = ['bansos']
 handler.tagsfun = ['rpg']
 handler.command = /^(bansos|korupsi)$/i
 
-export default handler
+export default handler*/
