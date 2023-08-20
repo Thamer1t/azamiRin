@@ -6,71 +6,69 @@ const cooldownn = 180000
 
 let handler = async (m, { conn, usedPrefix }) => {
 	let user = db.data.users[m.sender]
-	if (new Date - user.lasthunt <= cooldown) return m.reply(`📍 Sudah cukup perburuan kali ini\nGunakan waktu yang ada untuk beristirahat, perburuan selanjutnya dapat dimulai dalam . . .\n🕖 *${((user.lasthunt + cooldown) - new Date()).toTimeString()}*`)
-	if (user.armor == 0 || user.sword == 0 || user.bow == 0) return m.reply(`Perlu *${usedPrefix}craft* armor, sword, dan bow terlebih dahulu.\n\nAnda memiliki :\n━ 🥼 ${user.armor} Armor\n━ ⚔️ ${user.sword} Sword\n━ 🏹 ${user.bow} Bow`)
+	if (new Date - user.lasthunt <= cooldown) return m.reply(`📍 لقد انتهت جلسة الصيد الحالية\استغل الوقت المتاح للاستراحة، يمكن بدء جلسة صيد جديدة بعد . . .\n🕖 *${((user.lasthunt + cooldown) - new Date()).toTimeString()}*`)
+	if (user.درع == 0 || user.سيف == 0 || user.قوس == 0) return m.reply(`يجب صنع دروع وسيوف وأقواس أولاً باستخدام *${usedPrefix}صناعة*\n\nلديك :\n━ 🥼 ${user.درع} درع\n━ ⚔️ ${user.سيف} سيف\n━ 🏹 ${user.قوس} قوس`)
 	let buruan = [
-		{"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0},
-		{"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0}, {"hewan": 0}
+		{"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0},
+		{"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}, {"حيوان": 0}
 	]
 
 	for (let x of buruan) {
 		let random = ranNumb(0, 6)
-		x.hewan += random
+		x.حيوان += random
 	}
 
 	let gmbrt = 'https://telegra.ph/file/295a6d5105771875e1797.jpg'
-	let hsl = `[ *Perburuan Selesai* ]\nHasil tangkapan hari ini :
+	let hsl = `[ *انتهت جلسة الصيد* ]\nنتائج الصيد اليوم:
 
- *🐂 = [ ${buruan[0].hewan} ]*			 *🐃 = [ ${buruan[6].hewan} ]*
- *🐅 = [ ${buruan[1].hewan} ]*			 *🐮 = [ ${buruan[7].hewan} ]*
- *🐘 = [ ${buruan[2].hewan} ]*			 *🐒 = [ ${buruan[8].hewan} ]*
- *🐐 = [ ${buruan[3].hewan} ]*			 *🐗 = [ ${buruan[9].hewan} ]*
- *🐼 = [ ${buruan[4].hewan} ]*			 *🐖 = [ ${buruan[10].hewan} ]*
- *🐊 = [ ${buruan[5].hewan} ]*			 *🐓 = [ ${buruan[11].hewan} ]*`
+ *🐂 = [ ${buruan[0].حيوان} ]*			 *🐃 = [ ${buruan[6].حيوان} ]*
+ *🐅 = [ ${buruan[1].حيوان} ]*			 *🐮 = [ ${buruan[7].حيوان} ]*
+ *🐘 = [ ${buruan[2].حيوان} ]*			 *🐒 = [ ${buruan[8].حيوان} ]*
+ *🐐 = [ ${buruan[3].حيوان} ]*			 *🐗 = [ ${buruan[9].حيوان} ]*
+ *🐼 = [ ${buruan[4].حيوان} ]*			 *🐖 = [ ${buruan[10].حيوان} ]*
+ *🐊 = [ ${buruan[5].حيوان} ]*			 *🐓 = [ ${buruan[11].حيوان} ]*`
 
  	user.armordurability -= ranNumb(80, 120)
  	user.sworddurability -= ranNumb(80, 120)
  	user.bowdurability -= ranNumb(80, 120)
  	if (user.armordurability <= 0) {
  		user.armordurability = 0
- 		user.armor = 0
+ 		user.درع = 0
  	}
  	if (user.sworddurability <= 0) {
  		user.sworddurability = 0
- 		user.sword = 0
+ 		user.سيف = 0
  	}
  	if (user.bowdurability <= 0) {
  		user.bowdurability = 0
- 		user.bow = 0
+ 		user.قوس = 0
  	}
 
 	setTimeout(() => {
-		user.banteng	+= buruan[0].hewan
-		user.harimau	+= buruan[1].hewan
-		user.gajah		+= buruan[2].hewan
-		user.kambing	+= buruan[3].hewan
-		user.panda		+= buruan[4].hewan
-		user.buaya		+= buruan[5].hewan
-		user.kerbau		+= buruan[6].hewan
-		user.sapi		+= buruan[7].hewan
-		user.monyet		+= buruan[8].hewan
-		user.babihutan	+= buruan[9].hewan
-		user.babi		+= buruan[10].hewan
-		user.ayam		+= buruan[11].hewan
-		conn.sendFile(m.chat, gmbrt, '', hsl, m)
-	}, cooldownn)
-					 
-	setTimeout(() => {
-		m.reply('_Perburuan Dimulai..._')
-	}, 0)
-	user.lasthunt = new Date * 1
-}
+		user.ثور	+= buruan[0].حيوان
+		user.نمر	+= buruan[1].حيوان
+		user.فيل		+= buruan[2].حيوان
+		user.ماعز	+= buruan[3].حيوان
+		user.باندا		+= buruan[4].حيوان
+		user.تمساح		+= buruan[5].حيوان
+		user.جاموس		+= buruan[6].حيوان
+		user.بقرة		+= buruan[7].حيوان
+		user.قرد		+= buruan[8].حيوان
+		user.ضب	+= buruan[9].حيوان
+		user.خنزير		+= buruan[10].حيوان
+		user.دجاجة		+= buruan[11].حيوان 
+			
+		
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-handler.menufun = ['berburu']
-handler.tagsfun = ['rpg']
-handler.command = /^(berburu|hunt)$/i
+const userSchema = new Schema({
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
+});
 
-handler.cooldown = cooldown
-handler.premium = true
+const User = mongoose.model("User", userSchema);
 
-export default handler
+export default User;
