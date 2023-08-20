@@ -76,10 +76,10 @@ export async function handler(chatUpdate) {
 						user.bannedcd = 0
 					if (!isNumber(user.warn))
 						user.warn = 0
-					if (!isNumber(user.level))
-						user.level = 0
-					if (!('role' in user))
-						user.role = 'مبتدئ'
+					if (!isNumber(user.مستوى))
+						user.مستوى = 0
+					if (!('دور' in user))
+						user.دور = 'مبتدئ'
 					if (!('autolevelup' in user))
 						user.autolevelup = true
 
