@@ -17,7 +17,7 @@ let handler = async (m, { conn, args }) => {
 		}
 	} else {
 		if (!target) return m.reply('[!] ماحصلت ببيانات الشخص بقاعدة البيانات، شكله جديد')
-		if (user.level < target.level) return m.reply('[!] مستوى الهدف أعلى منك.')
+		if (user.مستوى < target.مستوى) return m.reply('[!] مستوى الهدف أعلى منك.')
 		let name = await conn.getName(who)
 		let thumb = fs.readFileSync('./media/bank.jpg')
 		let anu = `🏦 أصول *${name.replaceAll('\n','')}*\n\n`;
