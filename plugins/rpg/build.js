@@ -102,7 +102,7 @@ m.reply(`تم بناء *${total} 🛳️ مرفأ* بمستوى ${user.pelabuhan
 
 handler.menufun = ['بناء'].map(v => v + ' [العنصر] [العدد]')
 handler.tagsfun = ['rpg']
-handler.command = /^بناء$/i
+handler.command = /^(بناء)$/i
 
 handler.premium = true
 
