@@ -14,6 +14,6 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 
 handler.menufun = ['فواكه']
 handler.tagsfun = ['rpg']
-handler.command = /^الفواكه$/i
+handler.command = /^(الفواكه)$/i
 
 export default handler
