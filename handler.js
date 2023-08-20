@@ -51,7 +51,7 @@ export async function handler(chatUpdate) {
 					if (!isNumber(user.lastclaim))
 						user.lastclaim = 0
 					if (!('registered' in user))
-						user.registered = false
+						user.registered = true
 					if (!('viewstatus' in user))
 						user.viewstatus = false
 					if (!user.registered) {
@@ -79,97 +79,97 @@ export async function handler(chatUpdate) {
 					if (!isNumber(user.level))
 						user.level = 0
 					if (!('role' in user))
-						user.role = 'Beginner'
+						user.role = 'مبتدئ'
 					if (!('autolevelup' in user))
 						user.autolevelup = true
 
-					if (!isNumber(user.money))
-						user.money = 0
-					if (!isNumber(user.atm))
-						user.atm = 0
-					if (!isNumber(user.health))
-						user.health = 100
-					if (!isNumber(user.potion))
-						user.potion = 0
-					if (!isNumber(user.trash))
-						user.trash = 0
-					if (!isNumber(user.wood))
-						user.wood = 0
-					if (!isNumber(user.rock))
-						user.rock = 0
-					if (!isNumber(user.string))
-						user.string = 0
-					if (!isNumber(user.iron))
-						user.iron = 0
-					if (!isNumber(user.sand))
-						user.sand = 0
+					if (!isNumber(user.جيني))
+						user.جيني = 0
+					if (!isNumber(user.بطاقة))
+						user.بطاقة = 0
+					if (!isNumber(user.صحة))
+						user.صحة = 100
+					if (!isNumber(user.جرعة))
+						user.جرعة = 0
+					if (!isNumber(user.قمامة))
+						user.قمامة = 0
+					if (!isNumber(user.خشب))
+						user.خشب = 0
+					if (!isNumber(user.حجر))
+						user.حجر = 0
+					if (!isNumber(user.خيط))
+						user.خيط = 0
+					if (!isNumber(user.حديد))
+						user.حديد = 0
+					if (!isNumber(user.رمل))
+						user.رمل = 0
 
-					if (!isNumber(user.emerald))
-						user.emerald = 0
+					if (!isNumber(user.زمرد))
+						user.زمرد = 0
 					if (!isNumber(user.الماس))
 						user.الماس = 0
-					if (!isNumber(user.gold))
-						user.gold = 0
-					if (!isNumber(user.steel))
-						user.steel = 0
-					if (!isNumber(user.kargo))
-						user.kargo = 0
-					if (!isNumber(user.kapal))
-						user.kapal = 0
+					if (!isNumber(user.ذهب))
+						user.ذهب = 0
+					if (!isNumber(user.فولاذ))
+						user.فولاذ = 0
+					if (!isNumber(user.بضاعة))
+						user.بضاعة = 0
+					if (!isNumber(user.قارب))
+						user.قارب = 0
 
-					if (!isNumber(user.common))
-						user.common = 0
+					if (!isNumber(user.شائع))
+						user.شائع = 0
 					if (!isNumber(user.commoncount))
 						user.commoncount = 0
-					if (!isNumber(user.uncommon))
-						user.uncommon = 0
+					if (!isNumber(user.غيرشائع))
+						user.غيرشائع = 0
 					if (!isNumber(user.uncommoncount))
 						user.uncommoncount = 0
-					if (!isNumber(user.mythic))
-						user.mythic = 0
+					if (!isNumber(user.غامض))
+						user.غامض = 0
 					if (!isNumber(user.mythiccount))
 						user.mythiccount = 0
-					if (!isNumber(user.legendary))
-						user.legendary = 0
+					if (!isNumber(user.اسطوري))
+						user.اسطوري = 0
 					if (!isNumber(user.legendarycount))
 						user.legendarycount = 0
-					if (!isNumber(user.pet))
-						user.pet = 0
+					if (!isNumber(user.حيوان))
+						user.حيوان = 0
 					if (!isNumber(user.petcount))
 						user.petcount = 0
-					if (!isNumber(user.petfood))
-						user.petfood = 0
+					if (!isNumber(user.طعام))
+						user.طعام = 0
 
-					if (!isNumber(user.horse))
-						user.horse = 0
+					if (!isNumber(user.حصان))
+						user.حصان = 0
 					if (!isNumber(user.horseexp))
 						user.horseexp = 0
-					if (!isNumber(user.cat))
-						user.cat = 0
+					if (!isNumber(user.قطة))
+						user.قطة = 0
 					if (!isNumber(user.catexp))
 						user.catexp = 0
-					if (!isNumber(user.fox))
-						user.fox = 0
+					if (!isNumber(user.ثعلب))
+						user.ثعلب = 0
 					if (!isNumber(user.foxexp))
 						user.foxexp = 0
-					if (!isNumber(user.dog))
-						user.dog = 0
+					if (!isNumber(user.كلب))
+						user.كلب = 0
 					if (!isNumber(user.dogexp))
 						user.dogexp = 0
-					if (!isNumber(user.wolf))
-						user.wolf = 0
+					if (!isNumber(user.ذئب))
+						user.ذئب = 0
 					if (!isNumber(user.wolfexp))
 						user.wolfexp = 0
-					if (!isNumber(user.centaur))
-						user.centaur = 0
+					if (!isNumber(user.قنطور))
+						user.قنطور = 0
 					if (!isNumber(user.centaurexp))
 						user.centaurexp = 0
-					if (!isNumber(user.phoenix))
-						user.phoenix = 0
+					if (!isNumber(user.عنقاء))
+						user.عنقاء = 0
 					if (!isNumber(user.phoenixexp))
 						user.phoenixexp = 0
-					if (!isNumber(user.dragon))
-						user.dragon = 0
+					if (!isNumber(user.تنين))
+						user.تنين = 0
 					if (!isNumber(user.dragonexp))
 						user.dragonexp = 0
 					if (!isNumber(user.horselvl))
@@ -224,24 +224,24 @@ export async function handler(chatUpdate) {
 					if (!isNumber(user.lastadu))
 						user.lastadu = 0
 
-					if (!isNumber(user.armor))
-						user.armor = 0
+					if (!isNumber(user.درع))
+						user.درع = 0
 					if (!isNumber(user.armordurability))
 						user.armordurability = 0
-					if (!isNumber(user.sword))
-						user.sword = 0
+					if (!isNumber(user.سيف))
+						user.سيف = 0
 					if (!isNumber(user.sworddurability))
 						user.sworddurability = 0
-					if (!isNumber(user.pickaxe))
-						user.pickaxe = 0
+					if (!isNumber(user.معول))
+						user.معول = 0
 					if (!isNumber(user.pickaxedurability))
 						user.pickaxedurability = 0
-					if (!isNumber(user.fishingrod))
-						user.fishingrod = 0
+					if (!isNumber(user.سنارة))
+						user.سنارة = 0
 					if (!isNumber(user.fishingroddurability))
 						user.fishingroddurability = 0
-					if (!isNumber(user.bow))
-						user.bow = 0
+					if (!isNumber(user.قوس))
+						user.قوس = 0
 					if (!isNumber(user.bowdurability))
 						user.bowdurability = 0
 
@@ -288,81 +288,81 @@ export async function handler(chatUpdate) {
 					if (!isNumber(user.ngojekcount))
 						user.ngojekcount = 0
 
-					if (!isNumber(user.bibitmangga))
-						user.bibitmangga = 0
-					if (!isNumber(user.bibitapel))
-						user.bibitapel = 0
-					if (!isNumber(user.bibitpisang))
-						user.bibitpisang = 0
-					if (!isNumber(user.bibitjeruk))
-						user.bibitjeruk = 0
-					if (!isNumber(user.bibitanggur))
-						user.bibitanggur = 0
-					if (!isNumber(user.mangga))
-						user.mangga = 0
-					if (!isNumber(user.apel))
-						user.apel = 0
-					if (!isNumber(user.pisang))
-						user.pisang = 0
-					if (!isNumber(user.jeruk))
-						user.jeruk = 0
-					if (!isNumber(user.anggur))
-						user.anggur = 0
+					if (!isNumber(user.بذورمانجو))
+						user.بذورمانجو = 0
+					if (!isNumber(user.بذورتفاح))
+						user.بذورتفاح = 0
+					if (!isNumber(user.بذورموز))
+						user.بذورموز = 0
+					if (!isNumber(user.بذوربرتقال))
+						user.بذوربرتقال = 0
+					if (!isNumber(user.بذورعنب))
+						user.بذورعنب = 0
+					if (!isNumber(user.مانجو))
+						user.مانجو = 0
+					if (!isNumber(user.تفاح))
+						user.تفاح = 0
+					if (!isNumber(user.موز))
+						user.موز = 0
+					if (!isNumber(user.برتقال))
+						user.برتقال = 0
+					if (!isNumber(user.عنب))
+						user.عنب = 0
 
-					if (!isNumber(user.banteng))
-						user.banteng = 0
-					if (!isNumber(user.harimau))
-						user.harimau = 0
-					if (!isNumber(user.gajah))
-						user.gajah = 0
-					if (!isNumber(user.kambing))
-						user.kambing = 0
-					if (!isNumber(user.panda))
-						user.panda = 0
-					if (!isNumber(user.buaya))
-						user.buaya = 0
-					if (!isNumber(user.kerbau))
-						user.kerbau = 0
-					if (!isNumber(user.sapi))
-						user.sapi = 0
-					if (!isNumber(user.monyet))
-						user.monyet = 0
-					if (!isNumber(user.babihutan))
-						user.babihutan = 0
-					if (!isNumber(user.babi))
-						user.babi = 0
-					if (!isNumber(user.ayam))
-						user.ayam = 0
+					if (!isNumber(user.ثور))
+						user.ثور = 0
+					if (!isNumber(user.نمر))
+						user.نمر = 0
+					if (!isNumber(user.فيل))
+						user.فيل = 0
+					if (!isNumber(user.ماعز))
+						user.ماعز = 0
+					if (!isNumber(user.باندا))
+						user.باندا = 0
+					if (!isNumber(user.تمساح))
+						user.تمساح = 0
+					if (!isNumber(user.جاموس))
+						user.جاموس = 0
+					if (!isNumber(user.بقرة))
+						user.بقرة = 0
+					if (!isNumber(user.قرد))
+						user.قرد = 0
+					if (!isNumber(user.ضب))
+						user.ضب = 0
+					if (!isNumber(user.خنزير))
+						user.خنزير = 0
+					if (!isNumber(user.دجاجة))
+						user.دجاجة = 0
 
-					if (!isNumber(user.orca))
-						user.orca = 0
-					if (!isNumber(user.paus))
-						user.paus = 0
-					if (!isNumber(user.lumba))
-						user.lumba = 0
-					if (!isNumber(user.hiu))
-						user.hiu = 0
-					if (!isNumber(user.ikan))
-						user.ikan = 0
-					if (!isNumber(user.lele))
-						user.lele = 0
-					if (!isNumber(user.bawal))
-						user.bawal = 0
-					if (!isNumber(user.nila))
-						user.nila = 0
-					if (!isNumber(user.kepiting))
-						user.kepiting = 0
-					if (!isNumber(user.lobster))
-						user.lobster = 0
-					if (!isNumber(user.gurita))
-						user.gurita = 0
-					if (!isNumber(user.cumi))
-						user.cumi = 0
-					if (!isNumber(user.udang))
-						user.udang = 0
+					if (!isNumber(user.سلمون))
+						user.سلمون = 0
+					if (!isNumber(user.حوت))
+						user.حوت = 0
+					if (!isNumber(user.دولفين))
+						user.دولفين = 0
+					if (!isNumber(user.قرش))
+						user.قرش = 0
+					if (!isNumber(user.سمكة))
+						user.سمكة = 0
+					if (!isNumber(user.سلور))
+						user.سلور = 0
+					if (!isNumber(user.زبيدي))
+						user.زبيدي = 0
+					if (!isNumber(user.نيلي))
+						user.نيلي = 0
+					if (!isNumber(user.سلطعون))
+						user.سلطعون = 0
+					if (!isNumber(user.سرطان))
+						user.سرطان = 0
+					if (!isNumber(user.اخطبوط))
+						user.اخطبوط = 0
+					if (!isNumber(user.حبار))
+						user.حبار = 0
+					if (!isNumber(user.جمبري))
+						user.جمبري = 0
 
-					if (!isNumber(user.masak))
-						user.masak = 0
+					if (!isNumber(user.طبخ))
+						user.طبخ = 0
 					if (!isNumber(user.masakrole))
 						user.masakrole = 0
 					if (!isNumber(user.masakexp))
@@ -370,60 +370,60 @@ export async function handler(chatUpdate) {
 					if (!isNumber(user.masaklevel))
 						user.masaklevel = 0
 
-					if (!isNumber(user.bawang))
-						user.bawang = 0
-					if (!isNumber(user.cabai))
-						user.cabai = 0
-					if (!isNumber(user.kemiri))
-						user.kemiri = 0
-					if (!isNumber(user.jahe))
-						user.jahe = 0
-					if (!isNumber(user.saus))
-						user.saus = 0
-					if (!isNumber(user.asam))
-						user.asam = 0
+					if (!isNumber(user.بصل))
+						user.بصل = 0
+					if (!isNumber(user.فلفل))
+						user.فلفل = 0
+					if (!isNumber(user.شمعة))
+						user.شمعة = 0
+					if (!isNumber(user.زنجبيل))
+						user.زنجبيل = 0
+					if (!isNumber(user.صلصة))
+						user.صلصة = 0
+					if (!isNumber(user.ليمون))
+						user.ليمون = 0
 
-					if (!isNumber(user.steak))
-						user.steak = 0
-					if (!isNumber(user.sate))
-						user.sate = 0
-					if (!isNumber(user.rendang))
-						user.rendang = 0
-					if (!isNumber(user.kornet))
-						user.kornet = 0
-					if (!isNumber(user.nugget))
-						user.nugget = 0
-					if (!isNumber(user.bluefin))
-						user.bluefin = 0
+					if (!isNumber(user.ستيك))
+						user.ستيك = 0
+					if (!isNumber(user.كباب))
+						user.كباب = 0
+					if (!isNumber(user.حميس))
+						user.حميس = 0
+					if (!isNumber(user.لحم))
+						user.لحم = 0
+					if (!isNumber(user.ناغت))
+						user.ناغت = 0
+					if (!isNumber(user.تونه))
+						user.تونه = 0
 					if (!isNumber(user.seafood))
 						user.seafood = 0
-					if (!isNumber(user.sushi))
-						user.sushi = 0
-					if (!isNumber(user.moluska))
-						user.moluska = 0
-					if (!isNumber(user.squidprawm))
-						user.squidprawm = 0
+					if (!isNumber(user.سوشي))
+						user.سوشي = 0
+					if (!isNumber(user.محار))
+						user.محار = 0
+					if (!isNumber(user.روبيان))
+						user.روبيان = 0
 
-					if (!isNumber(user.rumahsakit))
-						user.rumahsakit = 0
-					if (!isNumber(user.restoran))
-						user.restoran = 0
-					if (!isNumber(user.pabrik))
-						user.pabrik = 0
-					if (!isNumber(user.tambang))
-						user.tambang = 0
-					if (!isNumber(user.pelabuhan))
-						user.pelabuhan = 0
-					if (!('rumahsakitname' in user))
-						user.rumahsakitname = ''
-					if (!('restoranname' in user))
-						user.restoranname = ''
-					if (!('pabrikname' in user))
-						user.pabrikname = ''
-					if (!('tambangname' in user))
-						user.tambangname = ''
-					if (!('pelabuhanname' in user))
-						user.pelabuhanname = ''
+					if (!isNumber(user.مستشفى))
+						user.مستشفى = 0
+					if (!isNumber(user.مطعم))
+						user.مطعم = 0
+					if (!isNumber(user.مصنع))
+						user.مصنع = 0
+					if (!isNumber(user.منجم))
+						user.منجم = 0
+					if (!isNumber(user.مرفأ))
+						user.مرفأ = 0
+					if (!('اسم_المستشفى' in user))
+                                                user.اسم_المستشفى = ''
+					if (!('اسم_المستشفى' in user))
+	       					user.اسم_المستشفى = ''
+					if (!('اسم_المصنع' in user))
+						user.اسم_المصنع = ''
+					if (!('اسم_المنجم' in user))
+						user.اسم_المنجم = ''
+					if (!('اسم_المرفأ' in user))
+						user.اسم_المرفأ = ''
 					if (!('openaitxt' in user))
 						user.openaitxt = []
 					if (!isNumber(user.rumahsakitexp))
@@ -467,7 +467,7 @@ export async function handler(chatUpdate) {
 					bannedcd: 0,
 					warn: 0,
 					level: 0,
-					role: 'Beginner',
+					role: 'مبتدئ',
 					autolevelup: true,
 
 					money: 0,
@@ -1265,9 +1265,9 @@ export async function deleteUpdate(message) {
 
 global.dfail = (type, m, conn) => {
 	let msg = {
-		rowner: `*「OWNERR BOT ONLY」*`,
-		owner: `*「OWNER BOT ONLY」*`,
-		mods: `*「DEV / MODS ONLY」*`,
+		rowner: `*「لغومونريونغ فقط」*`,
+		owner: `*「لغومونريونغ فقط」*`,
+		mods: `*「لغومونريونغ ومساعديه」*`,
 		premium: `*「PREMIUM USER ONLY」*\n\n*Or Get Full Access Here :*\n${db.data.datas.linkgc || 'https://chat.whatsapp.com/KH2teKqiSpq3GPZbXgNchs'}\n\nOtherwise type this : *.privatecmd*`,
 		group: `*「GROUP ONLY」*`,
 		private: `*「PRIVATE CHAT ONLY」*`,
