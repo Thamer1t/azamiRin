@@ -28,37 +28,37 @@ let handler = async (m, { usedPrefix, command }) => {
 	const emerald = 1
 	const diamond = 1
 
-	user.health -= health
-	user.money += money
-	user.exp += exp
-	user.trash += trash
-	user.rock += rock
-	user.wood += wood
-	user.string += string
-	if (user.adventurecount % 25  == 0) user.common  += common
-	if (user.adventurecount % 50  == 0) user.gold	+= gold
-	if (user.adventurecount % 150 == 0) user.emerald += emerald
-	if (user.adventurecount % 400 == 0) user.diamond += diamond
+	user.صحة -= health
+	user.جيني += money
+	user.خبرة += exp
+	user.قمامة += trash
+	user.حجر += rock
+	user.خشب += wood
+	user.خيط += string
+	if (user.adventurecount % 25  == 0) user.شائع  += common
+	if (user.adventurecount % 50  == 0) user.ذهب	+= gold
+	if (user.adventurecount % 150 == 0) user.زمرد += emerald
+	if (user.adventurecount % 400 == 0) user.الماس += diamond
 
-	let txt = `[ *Selesai ${command}* ]\n\n`
-	txt += `*❤️ health : -${health}*\nAnda membawa pulang :\n`
-	txt += `*💵 money :* ${money}\n`
-	txt += `*✉️ exp :* ${exp}\n`
-	txt += `*🗑 trash :* ${trash}\n`
-	txt += `*🪨 rock :* ${rock}\n`
-	txt += `*🪵 wood :* ${wood}\n`
-	txt += `*🕸️ string :* ${string}`
-	if (user.adventurecount % 25  == 0) txt += `\n\nBonus adventure ${user.adventurecount} kali\n*📦 common :* ${common}`
-	if (user.adventurecount % 50  == 0) txt += `\n\nBonus adventure ${user.adventurecount} kali\n*👑 gold :* ${gold}`
-	if (user.adventurecount % 150 == 0) txt += `\n\nBonus adventure ${user.adventurecount} kali\n*💚 emerald :* ${emerald}`
-	if (user.adventurecount % 400 == 0) txt += `\n\nBonus adventure ${user.adventurecount} kali\n*💎 diamond :* ${diamond}`
-	m.reply(txt)
-	user.lastadventure = new Date * 1
+	let txt = `[ *Selesai ${command}* ]\n\n`;
+txt += `*❤️ الصحة : -${health}*\nغامرت وحصلت :\n`;
+txt += `*💵 المال:* ${money}\n`;
+txt += `*✉️ الخبرة:* ${exp}\n`;
+txt += `*🗑 القمامة:* ${trash}\n`;
+txt += `*🪨 الصخور:* ${rock}\n`;
+txt += `*🪵 الخشب:* ${wood}\n`;
+txt += `*🕸️ الخيوط:* ${string}`;
+if (user.adventurecount % 25 == 0) txt += `\n\nمكافأة المغامرة ${user.adventurecount} مرة\n*📦 شائع:* ${common}`;
+if (user.adventurecount % 50 == 0) txt += `\n\nمكافأة المغامرة ${user.adventurecount} مرة\n*👑 ذهب:* ${gold}`;
+if (user.adventurecount % 150 == 0) txt += `\n\nمكافأة المغامرة ${user.adventurecount} مرة\n*💚 زمرد:* ${emerald}`;
+if (user.adventurecount % 400 == 0) txt += `\n\nمكافأة المغامرة ${user.adventurecount} مرة\n*💎 الماس:* ${diamond}`;
+m.reply(txt);
+user.lastadventure = new Date * 1
 }
 
-handler.menufun = ['adventure', 'petualang', 'berpetualang', 'mulung']
+handler.menufun = ['مغامرة', 'غامر', 'berpetualang', 'mulung']
 handler.tagsfun = ['rpg']
-handler.command = /^(adventure|(ber)?petualang(ang)?|mulung)$/i
+handler.command = /^(مغامرة|(ber)?petualang(ang)?|غامر)$/i
 
 handler.cooldown = cooldown
 
