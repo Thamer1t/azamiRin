@@ -3,20 +3,20 @@ import { isNumber } from '../../lib/func.js'
 
 let handler = async (m, { conn, command, usedPrefix, args }) => {
 	let user = db.data.users[m.sender]
-	if (user.atm == 0) return m.reply(`[!] Anda belum memiliki ATM.\n\ngunakan command *${usedPrefix}atm create* untuk memproses.`)
+	if (user.بطاقة == 0) return m.reply(`[!] ليس لديك حساب بنكي بعد.\n\nاستخدم الأمر *${usedPrefix}صناعة بطاقة* لإنشاء حساب بنكي.`)
 	let total = Math.floor(isNumber(args[0]) ? Math.min(Math.max(parseInt(args[0]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-	if (command.includes('all')) total = user.money
-	if ((user.money - total) > 0) {
-		user.money -= total
-		user.atm += total
-		m.reply(`Sukses menabung sebesar ${total} Money 💹`)
+	if (command.includes('الكل')) total = user.جيني
+	if ((user.جيني - total) > 0) {
+		user.جيني -= total
+		user.بطاقة += total
+		m.reply(`تم الادخار بنجاح بمبلغ ${total} جيني 💹`)
 	} else {
-		m.reply(`[❗] Uang anda tidak mencukupi untuk menabung ${total} money 💹`)
+		m.reply(`[❗] ليس لديك ما يكفي من المال للادخار ${total} جيني 💹`)
 	}
 }
 
-handler.menufun = ['nabung <jumlah>']
+handler.menufun = ['ادخار <المبلغ>']
 handler.tagsfun = ['rpg']
-handler.command = /^((t|n)abung(all)?)$/i
+handler.command = /^(ادخار(الكل)?)$/i
 
 export default handler
