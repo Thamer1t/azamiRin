@@ -3,18 +3,17 @@ import { isNumber, somematch } from '../../lib/func.js'
 
 let handler = async (m, { conn, command, usedPrefix, args }) => {
 	let user = db.data.users[m.sender]
-	if (user.atm == 0) return m.reply(`[!] Anda belum memiliki ATM.\n\ngunakan command *${usedPrefix}atm create* untuk memproses.`)
-	if (somematch(['all', 'semua'], args[0])) args[0] = user.atm - 50000
+	if (user.بطاقة == 0) return m.reply(`[!] ليس لديك حساب بنكي بعد.\n\nاستخدم الأمر *${usedPrefix}صناعة بطاقة* لإنشاء حساب بنكي.`)
+	if (somematch(['الكل', 'الجميع'], args[0])) args[0] = user.بطاقة - 50000
 	let total = Math.floor(isNumber(args[0]) ? Math.min(Math.max(parseInt(args[0]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-	if ((user.atm - total) >= 50000) {
-		user.atm -= total
-		user.money += total
-		m.reply(`Sukses menarik sebesar ${total} Money 💹`)
-	} else m.reply(`[❗] Rekening anda tidak mencukupi untuk menarik ${total} money 💹`)
+	if ((user.بطاقة - total) >= 50000) {
+		user.بطاقة -= total
+		user.جيني += total
+		m.reply(`تم سحب مبلغ ${total} جيني بنجاح 💹`)
+	} else m.reply(`[❗] رصيد حسابك غير كافٍ لسحب ${total} جيني 💹`)
 }
-
-handler.menufun = ['tarik <jumlah>']
+handler.menufun = ['ادخار <المبلغ>']
 handler.tagsfun = ['rpg']
-handler.command = /^((t|n)arik(all)?)$/i
+handler.command = /^(دخار(الكل)?)$/i
 
 export default handler
