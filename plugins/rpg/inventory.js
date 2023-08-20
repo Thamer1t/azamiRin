@@ -6,62 +6,62 @@ import adventure from './adventure.js'
 
 const inventory = {
 	others: {
-		health: true,
-		money: true,
-		exp: true,
+		صحة: true,
+		جيني: true,
+		خبرة: true,
 	},
 	items: {
-		potion: true,
-		petfood: true,
-		wood: true,
-		rock: true,
-		string: true,
-		iron: true,
-		trash: true,
-		emerald: true,
-		diamond: true,
-		gold: true,
+		جرعة: true,
+		طعام: true,
+		خشب: true,
+		حجر: true,
+		خيط: true,
+		حديد: true,
+		قمامة: true,
+		زمرد: true,
+		الماس: true,
+		ذهب: true,
 	},
 	builds: {
-		rumahsakit: true,
-		restoran: true,
-		pabrik: true,
-		tambang: true,
-		pelabuhan: true,
+		مستشفى: true,
+		مطعم: true,
+		مصنع: true,
+		منجم: true,
+		مرفأ: true,
 	},
 	crates: {
-		common: true,
-		uncommon: true,
-		mythic: true,
-		legendary: true,
+		شائع: true,
+		غيرشائع: true,
+		غامض: true,
+		اسطوري: true,
 	},
 	pets: {
-		horse: true,
-		cat: true,
-		fox: true,
-		dog: true,
-		wolf: true,
-		centaur: true,
-		phoenix: true,
-		dragon: true,
+		حصان: true,
+		قطة: true,
+		ثعلب: true,
+		كلب: true,
+		ذئب: true,
+		قنطور: true,
+		عنقاء: true,
+		تنين: true,
 	},
 	cooks: {
-		steak: true,
-		sate: true,
-		rendang: true,
-		kornet: true,
-		nugget: true,
-		bluefin: true,
+		ستيك: true,
+		كباب: true,
+		حميس: true,
+		لحم: true,
+		ناغت: true,
+		تونه: true,
 		seafood: true,
-		sushi: true,
-		moluska: true,
-		squidprawm: true,
+		سوشي: true,
+		محار: true,
+		روبيان: true,
 	},
 	fruits: {
-		mangga: true,
-		apel: true,
-		pisang: true,
-		jeruk: true,
+		مانجو: true,
+		تفاح: true,
+		موز: true,
+		برتقال: true,
 	},
 	cooldowns: {
 		lastclaim: {
@@ -77,7 +77,7 @@ const inventory = {
 			time: monthly.cooldown
 		},
 		lastadventure: {
-			name: 'adventure',
+			name: 'مغامرة',
 			time: adventure.cooldown
 		}
 	}
@@ -130,9 +130,9 @@ ${cooldowns}` : ''}
 
 handler.menufun = ['inventory', 'inv']
 handler.tagsfun = ['rpg']
-handler.command = /^(inv(entory)?|bal(ance)?|money|e?xp)$/i
+handler.command = /^(حق(يبة)?|bal(ance)?|جيني|e?xp)$/i
 
-export default handler
+خبرةort default handler
 
-const more = String.fromCharCode(8206)
+const more = خيط.fromCharCode(8206)
 const readMore = more.repeat(4001)
