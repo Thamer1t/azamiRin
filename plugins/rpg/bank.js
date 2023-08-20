@@ -6,32 +6,32 @@ let handler = async (m, { conn, args }) => {
 	let user = db.data.users[m.sender]
 	let target = db.data.users[who]
 	if (args[0] == 'create') {
-		if (user.atm > 0) {
-			m.reply(`[!] Anda sudah membuat rekening.`)
-		} else if (user.money < 50000) {
-			m.reply(`[!] Minimal memiliki 💵 50000 untuk deposit.`)
+		if (user.بطاقة > 0) {
+			m.reply(`[!] لقد انشأت الحساب بنجاح`)
+		} else if (user.جيني < 50000) {
+			m.reply(`[!] الحد الأدنى للإيداع هو 💵 50000 `)
 		} else {
-			user.money -= 50000
-			user.atm += 50000
-			m.reply(`Berhasil membuat rekening.`)
+			user.جيني -= 50000
+			user.بطاقة += 50000
+			m.reply(`*🫡تم*`)
 		}
 	} else {
-		if (!target) return m.reply('[!] User tidak ada dalam database.')
-		if (user.level < target.level) return m.reply('[!] Tidak dapat melihat karena level target lebih tinggi.')
+		if (!target) return m.reply('[!] ماحصلت ببيانات الشخص بقاعدة البيانات، شكله جديد')
+		if (user.level < target.level) return m.reply('[!] مستوى الهدف أعلى منك.')
 		let name = await conn.getName(who)
 		let thumb = fs.readFileSync('./media/bank.jpg')
-		let anu = `🏦 Aset *${name.replaceAll('\n','')}*\n\n`
-		anu += `*💰 Bank :* ${target.atm}\n`
-		anu += `*💵 Money :* ${target.money}\n\n`
-		anu += `*👑 Gold :* ${target.gold}\n`
-		anu += `*💎 Diamond :* ${target.diamond}\n`
-		anu += `*💚 Emerald :* ${target.emerald}`
+		let anu = `🏦 أصول *${name.replaceAll('\n','')}*\n\n`;
+anu += `*💰 البنك:* ${target.بطاقة}\n`;
+anu += `*💵 المال:* ${target.جيني}\n\n`;
+anu += `*👑 الذهب:* ${target.ذهب}\n`;
+anu += `*💎 الماس:* ${target.الماس}\n`;
+anu += `*💚 الزمرد:* ${target.زمرد}`;
 		await conn.sendMsg(m.chat, { image: thumb, caption: anu }, { quoted: m })
 	}
 }
 
-handler.menufun = ['bank <opts>']
+handler.menufun = ['بنك <opts>']
 handler.tagsfun = ['rpg']
-handler.command = /^(bank|atm)$/i
+handler.command = /^(بنك|رصيد)$/i
 
 export default handler
