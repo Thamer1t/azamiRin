@@ -14,7 +14,7 @@ let handler = async (m, { command, usedPrefix, args }) => {
 	
 	const item = (args[0] || '').toLowerCase()
 const total = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-if (item == 'rumahsakit') {
+if (item == 'مستشفى') {
 	if (user.مستشفى == 0) {
 		if (total > 1) return m.reply(`ليس لديك *🏥 مستشفى*، يمكنك بناء مبنى واحد فقط`)
 		if (user.جيني < 900000 * total || user.رمل < 600 * total) return m.reply(`مطلوب ${900000 * total} من المال، ${600 * total} من الرمل.\n\nلديك :\n━ ${global.rpg.emoticon('جيني')} ${user.جيني} من المال\n━ ${global.rpg.emoticon('رمل')} ${user.رمل} من الرمل`)
