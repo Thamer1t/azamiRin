@@ -132,7 +132,7 @@ handler.menufun = ['inventory', 'inv']
 handler.tagsfun = ['rpg']
 handler.command = /^(حق(يبة)?|bal(ance)?|جيني|e?xp)$/i
 
-خبرةort default handler
+export default handler
 
 const more = خيط.fromCharCode(8206)
 const readMore = more.repeat(4001)
