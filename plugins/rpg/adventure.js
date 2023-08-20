@@ -9,11 +9,10 @@ import { ranNumb } from '../../lib/func.js'
 const cooldown = 900000
 
 let handler = async (m, { usedPrefix, command }) => {
-	let user = db.data.users[m.sender]
-	let timers = (cooldown - (new Date - user.lastadventure))
-	if (user.health < 80) return m.reply(`Butuh minimal *❤️ 80 Health* untuk ${command}!!\n\nKetik *${usedPrefix}heal* untuk menambah health.\nAtau *${usedPrefix}use potion* untuk menggunakan potion.`)
-	if (new Date - user.lastadventure <= cooldown) return m.reply(`Kamu sudah berpetualang, mohon tunggu\n*🕐${timers.toTimeString()}*`)
-
+	let user = db.data.users\[m.sender\]
+let timers = (cooldown - (new Date() - user.lastadventure))
+if (user.صحة \< 80) return m.reply(`تحتاج إلى *❤️ صحة 80* على الأقل لـ ${command}!!\n\nاكتب *${usedPrefix}heal* لزيادة الصحة.\nأو اكتب *${usedPrefix}استخدام جرعة* لاستخدام الجرعة.`)
+if (new Date() - user.lastadventure \<= cooldown) return m.reply(`لقد قمت بالمغامرة بالفعل، يرجى الانتظار\n*🕐${timers.toTimeString()}*`)
 	user.adventurecount += 1
 
 	const health = ranNumb(3, 6)
